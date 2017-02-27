@@ -3,8 +3,9 @@ myApp.controller('ngoDonateConfirmController', ['$scope', '$stateParams', 'ngoSe
     $scope.ngo = ngoService.getNgo($stateParams.id);
     $scope.ngo.items.fulfilledQuantityPercentage += $scope.ngo.items.donorQuantity;
 
-    $scope.percentage = function (fulfilledQuantity, donorQuantity) {
-        debugger
-        return ((fulfilledQuantity+donorQuantity)/100)*100;
+    $scope.percentage = function (fulfilledQuantity, donorQuantity, requiredQuantity) {
+        console.log("fulfilledQuantity--" + fulfilledQuantity + "  donorQuantity--" + donorQuantity);
+
+        return (((parseFloat(fulfilledQuantity)+parseFloat(donorQuantity))/parseFloat(requiredQuantity))*100);
     }
 }]);

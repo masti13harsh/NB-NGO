@@ -1,5 +1,5 @@
 <div class="container" ng-repeat="item in ngo.items">
-    <div class="progress-bar" role="progressbar" aria-valuenow="{{percentage(item.fulfilledQuantity, item.donorQuantity)}}" aria-valuemin="0" aria-valuemax="100" style="width:{{percentage(item.fulfilledQuantity, item.donorQuantity)}}%">
-        {{percentage(item.fulfilledQuantity, item.donorQuantity)}}%
+    <div class="progress-bar" role="progressbar" aria-valuenow="{{percentage(item.fulfilledQuantityPercentage, item.donorQuantity, item.requiredQuantity)}}" aria-valuemin="0" aria-valuemax="100" style="width:{{percentage(item.fulfilledQuantityPercentage, item.donorQuantity, item.requiredQuantity)}}%">
+        {{percentage(item.fulfilledQuantityPercentage, item.donorQuantity, item.requiredQuantity)}}%
     </div>
 </div>
