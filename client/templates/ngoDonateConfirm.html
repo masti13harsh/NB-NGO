@@ -1,5 +1,46 @@
-<div class="container" ng-repeat="item in ngo.items">
-    <div class="progress-bar" role="progressbar" aria-valuenow="{{percentage(item.fulfilledQuantityPercentage, item.donorQuantity, item.requiredQuantity)}}" aria-valuemin="0" aria-valuemax="100" style="width:{{percentage(item.fulfilledQuantityPercentage, item.donorQuantity, item.requiredQuantity)}}%">
+<div class="container">
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Category</th>
+                        <th>Quantity Required</th>
+                        <th>Quantity Fulfilled</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in ngo.items" ng-if="item.donorQuantity > 0">
+                        <td>{{item.name}}</td>
+                        <td>{{item.category}}</td>
+                        <td>{{item.requiredQuantity}}</td>
+                        <td>
+                            <div class="progress" style="margin-bottom: 0px;">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{percentage(item.fulfilledQuantityPercentage, item.donorQuantity, item.requiredQuantity)}}" aria-valuemin="0" aria-valuemax="100" style="width:{{percentage(item.fulfilledQuantityPercentage, item.donorQuantity, item.requiredQuantity)}}%">
         {{percentage(item.fulfilledQuantityPercentage, item.donorQuantity, item.requiredQuantity)}}%
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="column">
+            <span class="input-group-addon">
+                <input type="checkbox">
+                <label>I'll visit myself</label>
+            </span>
+            <span class="input-group-addon">
+                <input type="checkbox">
+                <label>Please send a volunteer for pickup</label>
+            </span>
+        </div>
+        <a ui-sref="" class="btn btn-primary">Done</a>
+    </div>
+    
     </div>
 </div>
