@@ -48,22 +48,26 @@ myApp.service('ngoService', function() {
                 name: 'Soap',
                 category: 'Personal Care',
                 requiredQuantity: '100',
-                fulfilledQuantityPercentage: '25'
+                fulfilledQuantityPercentage: '25',
+                donorQuantity: 0
             },  {
                 name: 'Soap',
                 category: 'Personal Care',
                 requiredQuantity: '100',
-                fulfilledQuantityPercentage: '25'
+                fulfilledQuantityPercentage: '25',
+                donorQuantity: 0
             },  {
                 name: 'Soap',
                 category: 'Personal Care',
                 requiredQuantity: '100',
-                fulfilledQuantityPercentage: '100'
+                fulfilledQuantityPercentage: '100',
+                donorQuantity: 0
             },  {
                 name: 'Soap',
                 category: 'Personal Care',
                 requiredQuantity: '100',
-                fulfilledQuantityPercentage: '25'
+                fulfilledQuantityPercentage: '25',
+                donorQuantity: 0
             }
         ]
     };
