@@ -28,7 +28,7 @@
                             </div>
                         </td>
                         <td>
-                            <input type="number" min="0" ng-model="ngo.donorQuantity">
+                            <input type="number" min="0" ng-model="item.donorQuantity">
                         </td>
                     </tr>
                 </tbody>
@@ -39,7 +39,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 center-block">
-                <button ui-serf="" class="btn btn-primary center-block">Next !</button>
+                <a ui-sref="ngos-id-donate-confirm({id: id})" class="btn btn-primary center-block">Next !</a>
             </div>
         </div>
     </div>
