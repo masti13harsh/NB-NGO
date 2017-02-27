@@ -1,0 +1,14 @@
+<div class="card" ng-click="onClick(ngo)">
+    <div class="row">
+        <div class="col-md-2">{{ngo.name}}</div>
+        <!--<input class="btn btn-default pull-right col-md-2">{{ngo.name}}</input>-->
+    </div>
+    <div class="row">
+        <div class="col-md-2">{{ngo.category}}</div>
+    </div>
+    <img src="{{ngo.cardImage}}" alt="Avatar" style="width:100%">
+    <div class="container">
+        <h4><b>{{ngo.description}}</b></h4>
+        <p>{{ngoDistance(ngo.ngoLocation)}}</p>
+    </div>
+</div>

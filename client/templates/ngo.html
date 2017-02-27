@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <img src="{{ngo.coverImage}}" width="100%">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-9">
+            <h1>{{ngo.name}}</h1>
+        </div>
+        <div class="col-xs-3">
+            <a ui-sref="ngos-id-donate" style="margin-top: 25px;" class="btn btn-primary pull-right">Donate</a>
+        </div>
+    </div>
+    
+    <h4>{{ngo.category}}</h4>
+    <p>{{ngo.description}}</p>
+
+    <hr>
+    
+    <h3>Items Required</h3>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>S. No</th>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Quantity Required</th>
+                <th>Quantity Fulfilled</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in ngo.items">
+                <td>{{$index + 1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.category}}</td>
+                <td>{{item.requiredQuantity}}</td>
+                <td>
+                    <div class="progress" style="margin-bottom: 0px;">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{item.fulfilledQuantityPercentage}}"
+                        aria-valuemin="0" aria-valuemax="100" style="width:{{item.fulfilledQuantityPercentage}}%">
+                            {{item.fulfilledQuantityPercentage}}%
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

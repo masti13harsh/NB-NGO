@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <contact-ngo ngo="ngo"></contact-ngo>
+    </div>
+
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Category</th>
+                        <th>Quantity Required</th>
+                        <th>Quantity Fulfilled</th>
+                        <th>Quantiity to Donate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in ngo.items" ng-if="item.fulfilledQuantityPercentage < 100">
+                        <td>{{item.name}}</td>
+                        <td>{{item.category}}</td>
+                        <td>{{item.requiredQuantity}}</td>
+                        <td>
+                            <div class="progress" style="margin-bottom: 0px;">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{item.fulfilledQuantityPercentage}}" aria-valuemin="0" aria-valuemax="100" style="width:{{item.fulfilledQuantityPercentage}}%">
+                                    {{item.fulfilledQuantityPercentage}}%
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <input type="number" min="0" ng-model="ngo.donorQuantity">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 center-block">
+                <button ui-serf="" class="btn btn-primary center-block">Next !</button>
+            </div>
+        </div>
+    </div>
+</div>

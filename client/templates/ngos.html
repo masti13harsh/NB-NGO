@@ -1,0 +1,14 @@
+<h1>NGOS</h1>
+<div class="container">
+    <div ng-repeat="ngo in ngos" ng-if="$index % 2 == 0">
+        <div class="row">
+            <div class="col-xs-6">
+                <card-ngo ngo="ngo" on-click="onClick(ngo)"></card-ngo>
+            </div>
+            <div class="col-xs-6">
+                <card-ngo ngo="ngos[$index+1]" on-click="onClick(ngos[$index+1])"></card-ngo>
+            </div>
+        </div>
+        <br/>
+    </div>
+</div>
