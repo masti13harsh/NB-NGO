@@ -79,4 +79,8 @@ myApp.service('ngoService', function() {
     this.getNgo = function(id) {
         return ngo;
     }
+
+    this.getAllDistinctItems = function() {
+        
+    }
 });

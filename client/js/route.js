@@ -10,7 +10,6 @@ myApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', funct
             url: '/',
             templateUrl: 'templates/initialChoice.html'
         })
-        
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
         .state('ngos', {
             // we'll get to this in a bit
@@ -32,6 +31,11 @@ myApp.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', funct
             url: '/ngos/:id/donate/confirm',
             templateUrl: 'templates/ngoDonateConfirm.html',
             controller: "ngoDonateConfirmController"
+        })
+        .state('search', {
+            url: '/search',
+            templateUrl: 'templates/search.html',
+            controller: "searchController"
         });
     
     // $routeProvider
