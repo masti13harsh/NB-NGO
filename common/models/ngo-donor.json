@@ -1,0 +1,78 @@
+{
+  "name": "ngoDonor",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "required": true,
+      "index": true
+    },
+    "userId": {
+      "type": "number",
+      "required": true
+    },
+    "ngoId": {
+      "type": "number",
+      "required": true
+    },
+    "itemId": {
+      "type": "number",
+      "required": false
+    },
+    "itemQuantity": {
+      "type": "number",
+      "required": false
+    },
+    "fundDonated": {
+      "type": "number",
+      "required": false
+    },
+    "optVolunteer": {
+      "type": "boolean",
+      "required": false
+    },
+    "volunteerId": {
+      "type": "number",
+      "required": false
+    },
+    "selfVisit": {
+      "type": "boolean",
+      "required": false
+    },
+    "selfVisitDate": {
+      "type": "date",
+      "required": false
+    },
+    "selfVisitConfirmedByNgo": {
+      "type": "boolean",
+      "required": false
+    },
+    "volunteerVisitConfirmed": {
+      "type": "boolean",
+      "required": false
+    },
+    "volunteerVisitDate": {
+      "type": "date",
+      "required": false
+    },
+    "date": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "belongsToNgo": {
+      "type": "belongsTo",
+      "model": "ngo",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -26,10 +26,29 @@
   },
   "RoleMapping": {
     "dataSource": "db",
-    "public": false
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
   },
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Person": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ngo": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ngoRequirement": {
+    "dataSource": "db",
+    "public": true
+  },
+  "ngoDonor": {
+    "dataSource": "db",
+    "public": true
   }
 }

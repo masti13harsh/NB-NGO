@@ -1,0 +1,104 @@
+{
+  "name": "ngo",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "addressLine1": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": false
+    },
+    "id": {
+      "type": "number",
+      "id": true,
+      "required": true,
+      "index": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "addressLine2": {
+      "type": "string",
+      "required": false
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "pincode": {
+      "type": "number",
+      "required": true
+    },
+    "landmark": {
+      "type": "string",
+      "required": false
+    },
+    "registrationNumber": {
+      "type": "string",
+      "required": true
+    },
+    "totalStrength": {
+      "type": "number",
+      "required": false
+    },
+    "date": {
+      "type": "date",
+      "required": false
+    },
+    "fundRequired": {
+      "type": "number",
+      "required": false
+    },
+    "fundRaised": {
+      "type": "number",
+      "required": false
+    },
+    "itemsRequired": {
+      "type": "number",
+      "required": false
+    },
+    "itemsFulfilled": {
+      "type": "number",
+      "required": false
+    },
+    "profileImageUrl": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "belongsToPerson": {
+      "type": "belongsTo",
+      "model": "Person",
+      "foreignKey": ""
+    },
+    "hasDonors": {
+      "type": "hasMany",
+      "model": "ngoDonor",
+      "foreignKey": ""
+    },
+    "hasRequirements": {
+      "type": "hasMany",
+      "model": "ngoRequirement",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
