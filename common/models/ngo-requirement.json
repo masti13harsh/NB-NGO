@@ -1,0 +1,50 @@
+{
+  "name": "ngoRequirement",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true,
+      "required": true,
+      "index": true
+    },
+    "ngoId": {
+      "type": "number",
+      "required": true
+    },
+    "itemName": {
+      "type": "string",
+      "required": true
+    },
+    "itemCategory": {
+      "type": "string",
+      "required": true
+    },
+    "totalItemRequired": {
+      "type": "number",
+      "required": true
+    },
+    "totalItemFulfilled": {
+      "type": "number",
+      "required": false
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "belongsToNgo": {
+      "type": "belongsTo",
+      "model": "ngo",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

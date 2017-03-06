@@ -1,0 +1,25 @@
+{
+  "name": "Person",
+  "plural": "",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "category": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "isNgo": {
+      "type": "hasOne",
+      "model": "ngo",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
