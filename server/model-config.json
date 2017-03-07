@@ -39,15 +39,15 @@
     "dataSource": "db",
     "public": true
   },
-  "ngo": {
+  "Ngo": {
     "dataSource": "db",
     "public": true
   },
-  "ngoRequirement": {
+  "NgoRequirement": {
     "dataSource": "db",
     "public": true
   },
-  "ngoDonor": {
+  "NgoDonor": {
     "dataSource": "db",
     "public": true
   }

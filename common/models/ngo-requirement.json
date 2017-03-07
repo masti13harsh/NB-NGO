@@ -1,5 +1,5 @@
 {
-  "name": "ngoRequirement",
+  "name": "NgoRequirement",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -42,7 +42,7 @@
     "belongsToNgo": {
       "type": "belongsTo",
       "model": "ngo",
-      "foreignKey": ""
+      "foreignKey": "ngoId"
     }
   },
   "acls": [],

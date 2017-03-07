@@ -697,6 +697,91 @@ paths:
           schema:
             $ref: '#/definitions/AccessToken'
       deprecated: false
+  '/People/{id}/isNgo':
+    get:
+      tags:
+        - Person
+      summary: Fetches hasOne relation isNgo.
+      operationId: Person.prototype.__get__isNgo
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: Person id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ngo'
+      deprecated: false
+    post:
+      tags:
+        - Person
+      summary: Creates a new instance in isNgo of this model.
+      operationId: Person.prototype.__create__isNgo
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/ngo'
+        - name: id
+          in: path
+          description: Person id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ngo'
+      deprecated: false
+    put:
+      tags:
+        - Person
+      summary: Update isNgo of this model.
+      operationId: Person.prototype.__update__isNgo
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/ngo'
+        - name: id
+          in: path
+          description: Person id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ngo'
+      deprecated: false
+    delete:
+      tags:
+        - Person
+      summary: Deletes isNgo of this model.
+      operationId: Person.prototype.__destroy__isNgo
+      parameters:
+        - name: id
+          in: path
+          description: Person id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
   '/People/{id}/accessTokens':
     get:
       tags:
@@ -1243,6 +1328,369 @@ paths:
         '204':
           description: Request was successful
       deprecated: false
+  '/ngos/{id}/belongsToPerson':
+    get:
+      tags:
+        - ngo
+      summary: Fetches belongsTo relation belongsToPerson.
+      operationId: ngo.prototype.__get__belongsToPerson
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: ngo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/Person'
+      deprecated: false
+  '/ngos/{id}/hasRequirements/{fk}':
+    get:
+      tags:
+        - ngo
+      summary: Find a related item by id for hasRequirements.
+      operationId: ngo.prototype.__findById__hasRequirements
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for hasRequirements
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: ngo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ngoRequirement'
+      deprecated: false
+    delete:
+      tags:
+        - ngo
+      summary: Delete a related item by id for hasRequirements.
+      operationId: ngo.prototype.__destroyById__hasRequirements
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for hasRequirements
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: ngo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - ngo
+      summary: Update a related item by id for hasRequirements.
+      operationId: ngo.prototype.__updateById__hasRequirements
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for hasRequirements
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/ngoRequirement'
+        - name: id
+          in: path
+          description: ngo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ngoRequirement'
+      deprecated: false
+  '/ngos/{id}/hasDonors/{fk}':
+    get:
+      tags:
+        - ngo
+      summary: Find a related item by id for hasDonors.
+      operationId: ngo.prototype.__findById__hasDonors
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for hasDonors
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: ngo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ngoDonor'
+      deprecated: false
+    delete:
+      tags:
+        - ngo
+      summary: Delete a related item by id for hasDonors.
+      operationId: ngo.prototype.__destroyById__hasDonors
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for hasDonors
+          required: true
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: ngo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+    put:
+      tags:
+        - ngo
+      summary: Update a related item by id for hasDonors.
+      operationId: ngo.prototype.__updateById__hasDonors
+      parameters:
+        - name: fk
+          in: path
+          description: Foreign key for hasDonors
+          required: true
+          type: string
+          format: JSON
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/ngoDonor'
+        - name: id
+          in: path
+          description: ngo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ngoDonor'
+      deprecated: false
+  '/ngos/{id}/hasRequirements':
+    get:
+      tags:
+        - ngo
+      summary: Queries hasRequirements of ngo.
+      operationId: ngo.prototype.__get__hasRequirements
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: ngo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ngoRequirement'
+      deprecated: false
+    post:
+      tags:
+        - ngo
+      summary: Creates a new instance in hasRequirements of this model.
+      operationId: ngo.prototype.__create__hasRequirements
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/ngoRequirement'
+        - name: id
+          in: path
+          description: ngo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ngoRequirement'
+      deprecated: false
+    delete:
+      tags:
+        - ngo
+      summary: Deletes all hasRequirements of this model.
+      operationId: ngo.prototype.__delete__hasRequirements
+      parameters:
+        - name: id
+          in: path
+          description: ngo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/ngos/{id}/hasRequirements/count':
+    get:
+      tags:
+        - ngo
+      summary: Counts hasRequirements of ngo.
+      operationId: ngo.prototype.__count__hasRequirements
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: ngo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
+  '/ngos/{id}/hasDonors':
+    get:
+      tags:
+        - ngo
+      summary: Queries hasDonors of ngo.
+      operationId: ngo.prototype.__get__hasDonors
+      parameters:
+        - name: filter
+          in: query
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: ngo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ngoDonor'
+      deprecated: false
+    post:
+      tags:
+        - ngo
+      summary: Creates a new instance in hasDonors of this model.
+      operationId: ngo.prototype.__create__hasDonors
+      parameters:
+        - name: data
+          in: body
+          required: false
+          schema:
+            $ref: '#/definitions/ngoDonor'
+        - name: id
+          in: path
+          description: ngo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ngoDonor'
+      deprecated: false
+    delete:
+      tags:
+        - ngo
+      summary: Deletes all hasDonors of this model.
+      operationId: ngo.prototype.__delete__hasDonors
+      parameters:
+        - name: id
+          in: path
+          description: ngo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '204':
+          description: Request was successful
+      deprecated: false
+  '/ngos/{id}/hasDonors/count':
+    get:
+      tags:
+        - ngo
+      summary: Counts hasDonors of ngo.
+      operationId: ngo.prototype.__count__hasDonors
+      parameters:
+        - name: where
+          in: query
+          description: Criteria to match model instances
+          required: false
+          type: string
+          format: JSON
+        - name: id
+          in: path
+          description: ngo id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            type: object
+            properties:
+              count:
+                type: number
+                format: double
+      deprecated: false
   /ngos:
     post:
       tags:
@@ -1603,6 +2051,29 @@ paths:
                 type: number
                 format: double
       deprecated: false
+  '/ngoRequirements/{id}/belongsToNgo':
+    get:
+      tags:
+        - ngoRequirement
+      summary: Fetches belongsTo relation belongsToNgo.
+      operationId: ngoRequirement.prototype.__get__belongsToNgo
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: ngoRequirement id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ngo'
+      deprecated: false
   /ngoRequirements:
     post:
       tags:
@@ -1962,6 +2433,29 @@ paths:
               count:
                 type: number
                 format: double
+      deprecated: false
+  '/ngoDonors/{id}/belongsToNgo':
+    get:
+      tags:
+        - ngoDonor
+      summary: Fetches belongsTo relation belongsToNgo.
+      operationId: ngoDonor.prototype.__get__belongsToNgo
+      parameters:
+        - name: refresh
+          in: query
+          required: false
+          type: boolean
+        - name: id
+          in: path
+          description: ngoDonor id
+          required: true
+          type: string
+          format: JSON
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/ngo'
       deprecated: false
   /ngoDonors:
     post:
@@ -2360,6 +2854,70 @@ definitions:
     required:
       - email
     additionalProperties: false
+  ngo:
+    properties:
+      addressLine1:
+        type: string
+      addressLine2:
+        type: string
+      city:
+        type: string
+      country:
+        type: string
+      date:
+        type: string
+        format: date-time
+      description:
+        type: string
+      fundRaised:
+        type: number
+        format: double
+      fundRequired:
+        type: number
+        format: double
+      id:
+        type: number
+        format: double
+      itemsFulfilled:
+        type: number
+        format: double
+      itemsRequired:
+        type: number
+        format: double
+      landmark:
+        type: string
+      name:
+        type: string
+      pincode:
+        type: number
+        format: double
+      profileImageUrl:
+        type: string
+      registrationNumber:
+        type: string
+      state:
+        type: string
+      totalStrength:
+        type: number
+        format: double
+      category:
+        type: string
+      belongsToPersonId:
+        type: number
+        format: double
+      personId:
+        type: number
+        format: double
+    required:
+      - addressLine1
+      - city
+      - country
+      - id
+      - name
+      - pincode
+      - registrationNumber
+      - state
+    additionalProperties: false
   Person:
     properties:
       category:
@@ -2378,62 +2936,6 @@ definitions:
     required:
       - category
       - email
-    additionalProperties: false
-  ngo:
-    properties:
-      addressLine1:
-        type: string
-      description:
-        type: string
-      id:
-        type: number
-        format: double
-      name:
-        type: string
-      addressLine2:
-        type: string
-      city:
-        type: string
-      state:
-        type: string
-      country:
-        type: string
-      pincode:
-        type: number
-        format: double
-      landmark:
-        type: string
-      registrationNumber:
-        type: string
-      totalStrength:
-        type: number
-        format: double
-      date:
-        type: string
-        format: date-time
-      fundRequired:
-        type: number
-        format: double
-      fundRaised:
-        type: number
-        format: double
-      itemsRequired:
-        type: number
-        format: double
-      itemsFulfilled:
-        type: number
-        format: double
-      profileImageUrl:
-        type: string
-    required:
-      - addressLine1
-      - id
-      - name
-      - city
-      - state
-      - country
-      - pincode
-      - registrationNumber
     additionalProperties: false
   ngoRequirement:
     properties:
@@ -2456,6 +2958,9 @@ definitions:
       date:
         type: string
         format: date-time
+      belongsToNgoId:
+        type: number
+        format: double
     required:
       - id
       - ngoId
@@ -2502,6 +3007,9 @@ definitions:
         type: string
         format: date-time
       date:
+        type: number
+        format: double
+      belongsToNgoId:
         type: number
         format: double
     required:
