@@ -15,9 +15,9 @@
   "validations": [],
   "relations": {
     "isNgo": {
-      "type": "hasOne",
+      "type": "hasMany",
       "model": "ngo",
-      "foreignKey": ""
+      "foreignKey": "userId"
     }
   },
   "acls": [],
